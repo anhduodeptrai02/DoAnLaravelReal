@@ -1,11 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
+	<meta charset="UTF-8">
+    <meta name="description" content="Fashi Template">
+    <meta name="keywords" content="Fashi, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <title>>@yield('title')</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>@yield('title')</title>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+
+
+	<!-- Css Styles -->
+	<link rel="stylesheet" href="{!! asset('css/bootstrap.min.css')!!}" type="text/css">
+	<link rel="stylesheet" href="{!! asset('css/font-awesome.min.css')!!}" type="text/css">
+	<link rel="stylesheet" href="{!! asset('css/themify-icons.css')!!}" type="text/css">
+	<link rel="stylesheet" href="{!! asset('css/elegant-icons.css')!!}" type="text/css">
+	<link rel="stylesheet" href="{!! asset('css/owl.carousel.min.css')!!}" type="text/css">
+	<link rel="stylesheet" href="{!! asset('css/nice-select.css')!!}" type="text/css">
+	<link rel="stylesheet" href="{!! asset('css/jquery-ui.min.css')!!}" type="text/css">
+	<link rel="stylesheet" href="{!! asset('css/slicknav.min.css')!!}" type="text/css">
+	<link rel="stylesheet" href="{!! asset('css/style.css')!!}" type="text/css">
     <link href="{!! asset('frontend/css/bootstrap.min.css')!!}" rel="stylesheet">
     <link href="{!! asset('frontend/css/font-awesome.min.css')!!}" rel="stylesheet">
     <link href="{!! asset('frontend/css/prettyPhoto.css')!!}" rel="stylesheet">
@@ -13,23 +27,22 @@
     <link href="{!! asset('frontend/css/animate.css')!!}" rel="stylesheet">
 	<link href="{!! asset('frontend/css/main.css')!!}" rel="stylesheet">
 	<link href="{!! asset('frontend/css/responsive.css')!!}" rel="stylesheet">     
-    <link rel="shortcut icon" href="images/ico/favicon.ico">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
 </head><!--/head-->
 <body>
+	<!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
     @yield('header')
     @yield('slider')
-	<section>
+	<section class="product-shop spad">
 		<div class="container">
 			<div class="row">
-				<div class="col-sm-3">
+				<div class="col-lg-3 col-md-6 col-sm-8 order-2 order-lg-1 produts-sidebar-filter">
                 @yield('left')
 				</div>
 				
-				<div class="col-sm-9 padding-right">
+				<div class="col-lg-9 order-1 order-lg-2">
                 @yield('right')
 
 				</div>
@@ -37,85 +50,7 @@
 		</div>
 	</section>
     <footer id="footer"><!--Footer-->
-		<div class="footer-top">
-			<div class="container">
-				<div class="row">
-					<div class="col-sm-2">
-						<div class="companyinfo">
-							<h2><span>e</span>-shopper</h2>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,sed do eiusmod tempor</p>
-						</div>
-					</div>
-					<div class="col-sm-7">
-						<div class="col-sm-3">
-							<div class="video-gallery text-center">
-								<a href="#">
-									<div class="iframe-img">
-										<img src="images/home/iframe1.png" alt="" />
-									</div>
-									<div class="overlay-icon">
-										<i class="fa fa-play-circle-o"></i>
-									</div>
-								</a>
-								<p>Circle of Hands</p>
-								<h2>24 DEC 2014</h2>
-							</div>
-						</div>
-						
-						<div class="col-sm-3">
-							<div class="video-gallery text-center">
-								<a href="#">
-									<div class="iframe-img">
-										<img src="images/home/iframe2.png" alt="" />
-									</div>
-									<div class="overlay-icon">
-										<i class="fa fa-play-circle-o"></i>
-									</div>
-								</a>
-								<p>Circle of Hands</p>
-								<h2>24 DEC 2014</h2>
-							</div>
-						</div>
-						
-						<div class="col-sm-3">
-							<div class="video-gallery text-center">
-								<a href="#">
-									<div class="iframe-img">
-										<img src="images/home/iframe3.png" alt="" />
-									</div>
-									<div class="overlay-icon">
-										<i class="fa fa-play-circle-o"></i>
-									</div>
-								</a>
-								<p>Circle of Hands</p>
-								<h2>24 DEC 2014</h2>
-							</div>
-						</div>
-						
-						<div class="col-sm-3">
-							<div class="video-gallery text-center">
-								<a href="#">
-									<div class="iframe-img">
-										<img src="images/home/iframe4.png" alt="" />
-									</div>
-									<div class="overlay-icon">
-										<i class="fa fa-play-circle-o"></i>
-									</div>
-								</a>
-								<p>Circle of Hands</p>
-								<h2>24 DEC 2014</h2>
-							</div>
-						</div>
-					</div>
-					<div class="col-sm-3">
-						<div class="address">
-							<img src="images/home/map.png" alt="" />
-							<p>505 S Atlantic Ave Virginia Beach, VA(Virginia)</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+	
 		
 		<div class="footer-widget">
 			<div class="container">
@@ -173,7 +108,7 @@
 							<h2>About Shopper</h2>
 							<form action="#" class="searchform">
 								<input type="text" placeholder="Your email address" />
-								<button type="submit" class="btn btn-default"><i class="fa fa-arrow-circle-o-right"></i></button>
+								<button type="submit" class="btn btn-default"><i class="fas fa-arrow-circle-o-right"></i></button>
 								<p>Get the most recent updates from <br />our site and be updated your self...</p>
 							</form>
 						</div>
@@ -186,19 +121,22 @@
 		<div class="footer-bottom">
 			<div class="container">
 				<div class="row">
-					<p class="pull-left">Copyright © 2013 E-SHOPPER Inc. All rights reserved.</p>
-					<p class="pull-right">Designed by <span><a target="_blank" href="http://www.themeum.com">Themeum</a></span></p>
-				</div>
+					<p class="pull-left">Copyright © Bùi Hải Đường</p></div>
 			</div>
 		</div>
 		
 	</footer><!--/Footer-->
 
-    <script src="{!! asset('frontend/js/jquery.js')!!}"></script>
-	<script src="{!! asset('frontend/js/bootstrap.min.js')!!}"></script>
-	<script src="{!! asset('frontend/js/jquery.scrollUp.min.js')!!}"></script>
-	<script src="{!! asset('frontend/js/price-range.js')!!}}"></script>
-    <script src="{!! asset('frontend/js/jquery.prettyPhoto.js')!!}"></script>
-    <script src="{!! asset('frontend/js/main.js')!!}"></script>
+    
+	<script src="{!! asset('js/jquery-3.3.1.min.js')!!}"></script>
+    <script src="{!! asset('js/bootstrap.min.js')!!}"></script>
+    <script src="{!! asset('js/jquery-ui.min.js')!!}"></script>
+    <script src="{!! asset('js/jquery.countdown.min.js')!!}"></script>
+    <script src="{!! asset('js/jquery.nice-select.min.js')!!}"></script>
+    <script src="{!! asset('js/jquery.zoom.min.js')!!}"></script>
+    <script src="{!! asset('js/jquery.dd.min.js')!!}"></script>
+    <script src="{!! asset('js/jquery.slicknav.js')!!}"></script>
+    <script src="{!! asset('js/owl.carousel.min.js')!!}"></script>
+	<script src="{!! asset('js/main.js')!!}"></script>
 </body>
 </html>

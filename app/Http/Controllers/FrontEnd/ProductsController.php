@@ -19,7 +19,11 @@ class ProductsController extends Controller
         $products = Product::all();
         return view($this->rootview.'products', compact('products'));
     }
-
+    public function detail($id)
+    {
+        $productdetail = Product::find($id);
+        return view($this->rootview.'productdetail', compact('productdetail'));
+    }
     public function cart()
     {   
         return view($this->rootview.'cart');

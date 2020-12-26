@@ -18,7 +18,7 @@
    </div>
    <div class="form-group">
      <label for="image">Image:</label>
-     <input type="text" class="form-control"name="image" value="{{$product->image}}">
+     <input type="file" class="form-control"name="image">
    </div>
    <div class="form-group">
     <label for="price">Price:</label>
@@ -31,6 +31,7 @@
   <div class="form-group">
     <label for="content">Content:</label>
     <textarea class="form-control" name="content">{{$product->content}}</textarea>
+    <script>CKEDITOR.replace('contents');</script>
   </div>
 
    <button type="submit" name="btn_editproduct"class="btn btn-primary">Thực Hiện</button>

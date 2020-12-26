@@ -25,6 +25,7 @@ Route::group(['middleware' => 'CheckAdminLogin','prefix' => 'panel/user', 'names
 
 Route::group(['middleware' => 'CheckAdminLogin','prefix' => 'panel','namespace' => 'admin'], function() {
 	Route::resource('product',ProductController::class);
+	Route::resource('user',UserController::class);
 	Route::resource('category',CategoryController::class);
 	Route::get('category/productlist/{id}', 'CategoryController@productlist')->name('category.productlist');
 	Route::resource('categoryNews',CategoryNews::class);
@@ -33,6 +34,7 @@ Route::group(['middleware' => 'CheckAdminLogin','prefix' => 'panel','namespace' 
 Route::group(['prefix' => 'product', 'namespace' => 'FrontEnd'], function() {
 Route::get('/', 'ProductsController@index');
 Route::get('cart', 'ProductsController@cart');
+Route::get('detail/{id}', 'ProductsController@detail');
 Route::get('add-to-cart/{id}', 'ProductsController@addToCart');
 Route::patch('update-cart', 'ProductsController@update');
 Route::delete('remove-from-cart', 'ProductsController@remove');

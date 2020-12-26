@@ -53,9 +53,7 @@ class CategoryController extends Controller
             'discount' => 'required',
             'content' => 'required',
         ]);
-        // $request->image = $this->imageUpload($request);
         $Category->name = $request->name;
-       // $Category->image = $this->imageUpload($request);
         $Category->image = Helper::imageUpload($request);
         $Category->price = $request->price;
         $Category->discount = $request->discount;
@@ -105,7 +103,7 @@ class CategoryController extends Controller
             'discount' => 'required',
             'content' => 'required',
         ]);
-        $data['image'] = $this->imageUpload($request);
+        $data['image'] = Helper::imageUpload($request);
         if($Category->update($data))
             Session::flash('message', 'successfully!');
         else

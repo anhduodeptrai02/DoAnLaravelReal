@@ -1,75 +1,191 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-
-    <title>@yield('title')</title>
-
-    <link rel="stylesheet" href="{!! asset('api/bootstrap/css/bootstrap.min.css') !!}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
-   	<link rel="stylesheet" href="{!! asset('api/fontawesome/css/all.css') !!}">
-    <script src="{!! asset('admin/js/jquery.min.js') !!}"></script>
-    <script src="{!! asset('admin/js/popper.js') !!}"></script>
-    <script src="{!! asset('admin/js/bootstrap.min.js') !!}"></script>
-
-
-</head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>>@yield('title')</title>
+    <link href="{!! asset('frontend/css/bootstrap.min.css')!!}" rel="stylesheet">
+    <link href="{!! asset('frontend/css/font-awesome.min.css')!!}" rel="stylesheet">
+    <link href="{!! asset('frontend/css/prettyPhoto.css')!!}" rel="stylesheet">
+    <link href="{!! asset('frontend/css/price-range.css')!!}" rel="stylesheet">
+    <link href="{!! asset('frontend/css/animate.css')!!}" rel="stylesheet">
+	<link href="{!! asset('frontend/css/main.css')!!}" rel="stylesheet">
+	<link href="{!! asset('frontend/css/responsive.css')!!}" rel="stylesheet">     
+    <link rel="shortcut icon" href="images/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+</head><!--/head-->
 <body>
-
-<div class="container">
-
-    <div class="row">
-        <div class="col-lg-12 col-sm-12 col-12 main-section">
-            <div class="dropdown">
-                <button type="button" class="btn btn-primary" data-toggle="dropdown">
-                    <i class="fa fa-shopping-cart" aria-hidden="true"></i> Giỏ hàng <span class="badge badge-pill badge-danger">{{ count((array) session('cart')) }}</span>
-                </button>
-                <div class="dropdown-menu">
-                    <div class="row total-header-section">
-                        <div class="col-lg-6 col-sm-6 col-6">
-                            <i class="fa fa-shopping-cart" aria-hidden="true"></i> <span class="badge badge-pill badge-danger">{{ count((array) session('cart')) }}</span>
-                        </div>
-
-                        <?php $total = 0 ?>
-                        @foreach((array) session('cart') as $id => $details)
-                            <?php $total += $details['price'] * $details['quantity'] ?>
-                        @endforeach
-
-                        <div class="col-lg-6 col-sm-6 col-6 total-section text-right">
-                            <p>Total: <span class="text-info">$ {{ $total }}</span></p>
-                        </div>
-                    </div>
-
-                    @if(session('cart'))
-                        @foreach(session('cart') as $id => $details)
-                            <div class="row cart-detail">
-                                <div class="col-lg-4 col-sm-4 col-4 cart-detail-img">
-                                    <img src="{{ asset('images/'.$details['image']) }}" />
-                                </div>
-                                <div class="col-lg-8 col-sm-8 col-8 cart-detail-product">
-                                    <p>{{ $details['name'] }}</p>
-                                    <span class="price text-info"> ${{ $details['price'] }}</span> <span class="count"> Quantity:{{ $details['quantity'] }}</span>
-                                </div>
-                            </div>
-                        @endforeach
-                    @endif
-                    <div class="row">
-                        <div class="col-lg-12 col-sm-12 col-12 text-center checkout">
-                            <a href="{{ url('product/cart') }}" class="btn btn-primary btn-block">View all</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="container page">
+    @yield('header')
     @yield('content')
-</div>
+	
+    <footer id="footer"><!--Footer-->
+		<div class="footer-top">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-2">
+						<div class="companyinfo">
+							<h2><span>e</span>-shopper</h2>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,sed do eiusmod tempor</p>
+						</div>
+					</div>
+					<div class="col-sm-7">
+						<div class="col-sm-3">
+							<div class="video-gallery text-center">
+								<a href="#">
+									<div class="iframe-img">
+										<img src="images/home/iframe1.png" alt="" />
+									</div>
+									<div class="overlay-icon">
+										<i class="fa fa-play-circle-o"></i>
+									</div>
+								</a>
+								<p>Circle of Hands</p>
+								<h2>24 DEC 2014</h2>
+							</div>
+						</div>
+						
+						<div class="col-sm-3">
+							<div class="video-gallery text-center">
+								<a href="#">
+									<div class="iframe-img">
+										<img src="images/home/iframe2.png" alt="" />
+									</div>
+									<div class="overlay-icon">
+										<i class="fa fa-play-circle-o"></i>
+									</div>
+								</a>
+								<p>Circle of Hands</p>
+								<h2>24 DEC 2014</h2>
+							</div>
+						</div>
+						
+						<div class="col-sm-3">
+							<div class="video-gallery text-center">
+								<a href="#">
+									<div class="iframe-img">
+										<img src="images/home/iframe3.png" alt="" />
+									</div>
+									<div class="overlay-icon">
+										<i class="fa fa-play-circle-o"></i>
+									</div>
+								</a>
+								<p>Circle of Hands</p>
+								<h2>24 DEC 2014</h2>
+							</div>
+						</div>
+						
+						<div class="col-sm-3">
+							<div class="video-gallery text-center">
+								<a href="#">
+									<div class="iframe-img">
+										<img src="images/home/iframe4.png" alt="" />
+									</div>
+									<div class="overlay-icon">
+										<i class="fa fa-play-circle-o"></i>
+									</div>
+								</a>
+								<p>Circle of Hands</p>
+								<h2>24 DEC 2014</h2>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<div class="address">
+							<img src="images/home/map.png" alt="" />
+							<p>505 S Atlantic Ave Virginia Beach, VA(Virginia)</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="footer-widget">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-2">
+						<div class="single-widget">
+							<h2>Service</h2>
+							<ul class="nav nav-pills nav-stacked">
+								<li><a href="#">Online Help</a></li>
+								<li><a href="#">Contact Us</a></li>
+								<li><a href="#">Order Status</a></li>
+								<li><a href="#">Change Location</a></li>
+								<li><a href="#">FAQ’s</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-sm-2">
+						<div class="single-widget">
+							<h2>Quock Shop</h2>
+							<ul class="nav nav-pills nav-stacked">
+								<li><a href="#">T-Shirt</a></li>
+								<li><a href="#">Mens</a></li>
+								<li><a href="#">Womens</a></li>
+								<li><a href="#">Gift Cards</a></li>
+								<li><a href="#">Shoes</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-sm-2">
+						<div class="single-widget">
+							<h2>Policies</h2>
+							<ul class="nav nav-pills nav-stacked">
+								<li><a href="#">Terms of Use</a></li>
+								<li><a href="#">Privecy Policy</a></li>
+								<li><a href="#">Refund Policy</a></li>
+								<li><a href="#">Billing System</a></li>
+								<li><a href="#">Ticket System</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-sm-2">
+						<div class="single-widget">
+							<h2>About Shopper</h2>
+							<ul class="nav nav-pills nav-stacked">
+								<li><a href="#">Company Information</a></li>
+								<li><a href="#">Careers</a></li>
+								<li><a href="#">Store Location</a></li>
+								<li><a href="#">Affillate Program</a></li>
+								<li><a href="#">Copyright</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-sm-3 col-sm-offset-1">
+						<div class="single-widget">
+							<h2>About Shopper</h2>
+							<form action="#" class="searchform">
+								<input type="text" placeholder="Your email address" />
+								<button type="submit" class="btn btn-default"><i class="fa fa-arrow-circle-o-right"></i></button>
+								<p>Get the most recent updates from <br />our site and be updated your self...</p>
+							</form>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		
+		<div class="footer-bottom">
+			<div class="container">
+				<div class="row">
+					<p class="pull-left">Copyright © 2013 E-SHOPPER Inc. All rights reserved.</p>
+					<p class="pull-right">Designed by <span><a target="_blank" href="http://www.themeum.com">Themeum</a></span></p>
+				</div>
+			</div>
+		</div>
+		
+	</footer><!--/Footer-->
 
-@yield('scripts')
-
+    <script src="{!! asset('frontend/js/jquery.js')!!}"></script>
+	<script src="{!! asset('frontend/js/bootstrap.min.js')!!}"></script>
+	<script src="{!! asset('frontend/js/jquery.scrollUp.min.js')!!}"></script>
+	<script src="{!! asset('frontend/js/price-range.js')!!}}"></script>
+    <script src="{!! asset('frontend/js/jquery.prettyPhoto.js')!!}"></script>
+    <script src="{!! asset('frontend/js/main.js')!!}"></script>
 </body>
 </html>

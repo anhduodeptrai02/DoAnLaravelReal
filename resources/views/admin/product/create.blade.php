@@ -30,6 +30,7 @@
   <div class="form-group">
     <label for="content">Content:</label>
     <textarea class="form-control" name="content" id="contents"></textarea>
+    <script>CKEDITOR.replace('contents');</script>
   </div>
 
    <button type="submit" name="btn_addproduct"class="btn btn-primary">Thực Hiện</button>

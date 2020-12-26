@@ -9,7 +9,7 @@
    </div>
    <div class="form-group">
      <label for="image">Image:</label>
-     <input type="file" class="form-control"name="image" value="{{$category->image}}" />
+     <input type="file" class="form-control" name="image" value="{{$category->image}}" />
    </div>
    <div class="form-group">
     <label for="price">Price:</label>
