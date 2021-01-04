@@ -48,19 +48,25 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        $data=$request->validate([
+        $product = new Product();
+        $this->validate($request, [
             'name' => 'required',
             'price' => 'required',
             'discount' => 'required',
             'content' => 'required',
             'idcat' => 'required',
         ]);
-        $data['image'] = Helper::imageUpload($request);
-        if(Product::create( $data))
+        $product->name = $request->name;
+        $product->image = Helper::imageUpload($request);
+        $product->price = $request->price;
+        $product->discount = $request->discount;
+        $product->content = $request->content;
+        $product->idcat = $request->idcat;
+        if($product->save())
             Session::flash('message', 'successfully!');
         else
             Session::flash('message', 'Failure!');
-        return redirect()->route($this->index);   
+        return redirect()->route('product.index');  
     }
 
     /**
@@ -101,14 +107,14 @@ class ProductController extends Controller
             'price' => 'required',
             'discount' => 'required',
             'content' => 'required',
-            'idcat' => 'required',
+            'idcat'=>'required'
         ]);
-       $data['image'] = Helper::imageUpload($request);
+        $data['image'] = Helper::imageUpload($request);
         if($product->update($data))
             Session::flash('message', 'successfully!');
         else
             Session::flash('message', 'Failure!');
-        return redirect()->route($this->index);  
+        return redirect()->route('product.index');   
     }
 
     /**

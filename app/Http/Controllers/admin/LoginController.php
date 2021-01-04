@@ -13,7 +13,7 @@ class LoginController extends Controller
     public function getLogin()
     {
         if (Auth::check()) {
-            return redirect('panel');
+            return redirect('panel/product');
         } else {
             return view('admin.login');
         }
@@ -26,7 +26,7 @@ class LoginController extends Controller
             'status'    =>1
         ];
         if (Auth::attempt($login)) {
-        return redirect('panel')->with('name',Auth::User()->name);
+        return redirect('panel/product')->with('name',Auth::User()->name);
         } else {
             return redirect()->back()->with('status', 'Email hoặc Password không chính xác');
         }

@@ -35,16 +35,19 @@ Route::group(['prefix' => 'product', 'namespace' => 'FrontEnd'], function() {
 Route::get('/', 'ProductsController@index');
 Route::get('cart', 'ProductsController@cart');
 Route::get('detail/{id}', 'ProductsController@detail');
+Route::get('showcategory/{id}','ProductsController@partial');
+Route::get('partial/{id}', 'ProductsController@partial');
 Route::get('add-to-cart/{id}', 'ProductsController@addToCart');
 Route::patch('update-cart', 'ProductsController@update');
 Route::delete('remove-from-cart', 'ProductsController@remove');
 });
-
+Route::get('/', 'FrontEnd\ProductsController@index')->name('product');
 Route::group(['prefix' => 'home', 'namespace' => 'FrontEnd'], function() {
 	//Route::get('/', function() {return view('FrontEnd.home.home');})->name('home');
 	Route::get('/', 'HomeController@index')->name('home');
 });
 
+Route::get('/showcategory/{id}','FrontEnd\BrandController@index');
 /*
 GET	    /product	        		index	product.index
 GET	    /product/create	    		create	product.create

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\FrontEnd;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Product;
+use App\Models\Category;
 
 class ProductsController extends Controller
 {
@@ -16,8 +17,15 @@ class ProductsController extends Controller
     
     public function index()
     {
+        $cates = Category::all();
         $products = Product::all();
-        return view($this->rootview.'products', compact('products'));
+        return view($this->rootview.'products', compact('products','cates'));
+    }
+    public function partial($idcat)
+    {
+        $cates = Category::all();
+        $productspartial = Product::select('*')->where('idcat', $idcat)->get();
+        return view($this->rootview.'showcategory', compact('productspartial','cates'));
     }
     public function detail($id)
     {
@@ -39,8 +47,6 @@ class ProductsController extends Controller
         }
 
         $cart = session()->get('cart');
-
-        // if cart is empty then this the first product
         if(!$cart) {
 
             $cart = [

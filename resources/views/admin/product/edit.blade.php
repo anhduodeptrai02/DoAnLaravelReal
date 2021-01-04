@@ -1,6 +1,6 @@
 @extends('admin.product.layout')
 @section('content')
-<form action="{{route("product.update", $product->id)}}" method="POST">
+<form action="{{route('product.update', $product->id)}}" method="POST" enctype="multipart/form-data">
     @csrf
     @method('PUT')
    <div class="form-group">
@@ -18,7 +18,7 @@
    </div>
    <div class="form-group">
      <label for="image">Image:</label>
-     <input type="file" class="form-control"name="image">
+     <input type="file" class="form-control" name="image" value="{{$product->image}}">
    </div>
    <div class="form-group">
     <label for="price">Price:</label>

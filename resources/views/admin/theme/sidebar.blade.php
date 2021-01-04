@@ -8,34 +8,25 @@
           <!--change to offline or busy as needed-->
         </div>
         <div class="nav-profile-text d-flex flex-column">
-          <span class="font-weight-bold mb-2">David Grey. H</span>
+          <span class="font-weight-bold mb-2"><?php echo($name ?? 'admin') ?></span>
           <span class="text-secondary text-small">Project Manager</span>
         </div>
         <i class="mdi mdi-bookmark-check text-success nav-profile-badge"></i>
       </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="pages/icons/mdi.html">
-        <span class="menu-title">Icons</span>
+      <a class="nav-link" href="{{route('category.index')}}">
+        <span class="menu-title">Loại sản phẩm</span>
         <i class="mdi mdi-contacts menu-icon"></i>
       </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" data-toggle="collapse" href="#general-pages" aria-expanded="false" aria-controls="general-pages">
-        <span class="menu-title">Sample Pages</span>
-        <i class="menu-arrow"></i>
-        <i class="mdi mdi-medical-bag menu-icon"></i>
+      <a class="nav-link" href="{{route('product.index')}}">
+        <span class="menu-title">Sản phẩm</span>
+        <i class="mdi mdi-contacts menu-icon"></i>
       </a>
-      <div class="collapse" id="general-pages">
-        <ul class="nav flex-column sub-menu">
-          <li class="nav-item"> <a class="nav-link" href=""> Blank Page </a></li>
-          <li class="nav-item"> <a class="nav-link" href=""> Login </a></li>
-          <li class="nav-item"> <a class="nav-link" href=""> Register </a></li>
-          <li class="nav-item"> <a class="nav-link" href=""> 404 </a></li>
-          <li class="nav-item"> <a class="nav-link" href=""> 500 </a></li>
-        </ul>
-      </div>
     </li>
+    
     
   </ul>
 </nav>
